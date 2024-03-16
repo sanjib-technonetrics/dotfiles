@@ -1,5 +1,10 @@
 #!/bin/bash
 
+export LANGUAGE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y zsh fzf nano
 sudo chsh -s $(which zsh) coder
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
@@ -12,7 +17,7 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 zsh -c 'source .zshrc'
 
-sudo dockerd &
+sudo dockerd 2>&1 &
 
 # install and start code-server
 curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --prefix=/tmp/code-server --version 4.11.0
