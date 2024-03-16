@@ -12,12 +12,9 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git \
   ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/plugins/fast-syntax-highlighting
 zsh -c 'source .zshrc'
 
+sudo dockerd &
+
 # install and start code-server
 curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --prefix=/tmp/code-server --version 4.11.0
 /tmp/code-server/bin/code-server --auth none --port 13337 >/tmp/code-server.log 2>&1 &
 
-# install docker
-# curl -fsSL https://get.docker.com -o get-docker.sh
-# sh get-docker.sh
-
-sudo dockerd &
