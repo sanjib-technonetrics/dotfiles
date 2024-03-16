@@ -109,8 +109,7 @@ source $ZSH/oh-my-zsh.sh
 alias update="sudo apt update -y \
     && sudo apt --with-new-pkgs upgrade -y \
     && sudo apt autoremove \
-    && sudo apt autoclean \
-    && sudo snap refresh"
+    && sudo apt autoclean"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
