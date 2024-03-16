@@ -1,12 +1,13 @@
 #!/bin/bash
 
-sudo echo "LC_ALL=en_US.UTF-8" >> /etc/environment
-sudo echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-sudo echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 sudo locale-gen
+sudo update-locale
+
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y zsh fzf nano
+
 sudo chsh -s $(which zsh) coder
+
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc ~/.zshrc
 cp .p10k.zsh ~/.p10k.zsh
@@ -20,3 +21,5 @@ zsh -c 'source .zshrc'
 # install and start code-server
 curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --prefix=/tmp/code-server --version 4.11.0
 /tmp/code-server/bin/code-server --auth none --port 13337 >/tmp/code-server.log 2>&1 &
+
+nohup sudo dockerd >/dev/null 2>&1 &
