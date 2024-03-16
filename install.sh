@@ -5,7 +5,7 @@ sudo echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
 sudo echo "LANG=en_US.UTF-8" > /etc/locale.conf
 
 sudo locale-gen
-sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y locale-gen zsh fzf nano
+sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get install -y zsh fzf nano
 sudo chsh -s $(which zsh) coder
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp .zshrc ~/.zshrc
