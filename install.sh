@@ -19,3 +19,5 @@ curl -fsSL https://code-server.dev/install.sh | sh -s -- --method=standalone --p
 # install docker
 # curl -fsSL https://get.docker.com -o get-docker.sh
 # sh get-docker.sh
+
+sudo dockerd &
